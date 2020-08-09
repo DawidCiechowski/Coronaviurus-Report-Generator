@@ -1,3 +1,5 @@
-target/
+coronavirus-app/target
 .vscode
 coronavirus-app/.settings
+coronavirus-app/src/test
+

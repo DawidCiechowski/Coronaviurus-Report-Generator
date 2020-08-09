@@ -34,7 +34,7 @@ This is a Java application (in the early stages of working), which obtaines info
 <a name="todo"></a>
 ## TODO
 
-- [] Enable user to enter the country, for which they'd like a report.
-- [] Get and parse all the other information from Covid19API
-- [] Generate the report and save it to the currently working directory
-- [] Add other possible extensions to the application 
+- [ ] Enable user to enter the country, for which they'd like a report.
+- [ ] Get and parse all the other information from Covid19API
+- [ ] Generate the report and save it to the currently working directory
+- [ ] Add other possible extensions to the application 
