@@ -3,11 +3,10 @@ package com.coronaviursapplication;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Scanner;
 
 import com.coronaviursapplication.model.CoronavirusDayOne;
-import com.coronaviursapplication.model.CoronavirusDayOneList;
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -20,8 +19,15 @@ public class App {
             throws JsonParseException, JsonMappingException, MalformedURLException, IOException
     {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        Scanner scanner = new Scanner(System.in);
+        String country = "";
 
-        CoronavirusDayOneList l = mapper.readValue(new URL("https://api.covid19api.com/dayone/country/poland/status/confirmed"), CoronavirusDayOneList.class);
+        System.out.print("Enter the country, for which you'd like a report for: ");
+        country = scanner.nextLine();
+
+        CoronavirusDayOne[] listOfDayOne = mapper.readValue(new URL("https://api.covid19api.com/dayone/country/" + country.toLowerCase() + "/status/confirmed"), CoronavirusDayOne[].class);
+        CoronavirusDayOne dayOne = listOfDayOne[0];
+        System.out.println("First recorded case of Covid19 in " + country.substring(0,1).toUpperCase() + country.substring(1).toLowerCase() + " was on " + dayOne.getDate());
+        scanner.close();
     }
 }
