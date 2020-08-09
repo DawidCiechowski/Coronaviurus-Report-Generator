@@ -1,2 +1,3 @@
-/.vscode
-/coronavirus-app/stc/main/java/com/tests
+target/
+.vscode
+coronavirus-app/.settings
