@@ -1,23 +1,19 @@
-package com.coronaviursapplication.model;
+package com.coronaviursapplication.model.API;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class ApiModel {
 
-public class CoronavirusDayOne {
     String Country, Province, CityCode, Status, Lat, Lon, CountryCode, City;
     String Date;
-    int Cases;
-    
+    int Cases;    
 
-
-
-    public CoronavirusDayOne() {
+    public ApiModel() {
     }
 
-    public CoronavirusDayOne(@JsonProperty("Country") String Country, 
+    public ApiModel(@JsonProperty("Country") String Country, 
     @JsonProperty("Province") String Province, 
     @JsonProperty("CityCode") String CityCode, 
     @JsonProperty("Status") String Status, 
@@ -38,6 +34,7 @@ public class CoronavirusDayOne {
         this.Date = Date;
         this.Cases = Cases;
     }
+
 
     public String getCountry() {
         return this.Country;
@@ -119,52 +116,52 @@ public class CoronavirusDayOne {
         this.Cases = Cases;
     }
 
-    public CoronavirusDayOne Country(String Country) {
+    public ApiModel Country(String Country) {
         this.Country = Country;
         return this;
     }
 
-    public CoronavirusDayOne Province(String Province) {
+    public ApiModel Province(String Province) {
         this.Province = Province;
         return this;
     }
 
-    public CoronavirusDayOne CityCode(String CityCode) {
+    public ApiModel CityCode(String CityCode) {
         this.CityCode = CityCode;
         return this;
     }
 
-    public CoronavirusDayOne Status(String Status) {
+    public ApiModel Status(String Status) {
         this.Status = Status;
         return this;
     }
 
-    public CoronavirusDayOne Lat(String Lat) {
+    public ApiModel Lat(String Lat) {
         this.Lat = Lat;
         return this;
     }
 
-    public CoronavirusDayOne Lon(String Lon) {
+    public ApiModel Lon(String Lon) {
         this.Lon = Lon;
         return this;
     }
 
-    public CoronavirusDayOne CountryCode(String CountryCode) {
+    public ApiModel CountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
         return this;
     }
 
-    public CoronavirusDayOne City(String City) {
+    public ApiModel City(String City) {
         this.City = City;
         return this;
     }
 
-    public CoronavirusDayOne Date(String Date) {
+    public ApiModel Date(String Date) {
         this.Date = Date;
         return this;
     }
 
-    public CoronavirusDayOne Cases(int Cases) {
+    public ApiModel Cases(int Cases) {
         this.Cases = Cases;
         return this;
     }
@@ -173,11 +170,11 @@ public class CoronavirusDayOne {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof CoronavirusDayOne)) {
+        if (!(o instanceof ApiModel)) {
             return false;
         }
-        CoronavirusDayOne coronavirusDayOne = (CoronavirusDayOne) o;
-        return Objects.equals(Country, coronavirusDayOne.Country) && Objects.equals(Province, coronavirusDayOne.Province) && Objects.equals(CityCode, coronavirusDayOne.CityCode) && Objects.equals(Status, coronavirusDayOne.Status) && Objects.equals(Lat, coronavirusDayOne.Lat) && Objects.equals(Lon, coronavirusDayOne.Lon) && Objects.equals(CountryCode, coronavirusDayOne.CountryCode) && Objects.equals(City, coronavirusDayOne.City) && Objects.equals(Date, coronavirusDayOne.Date) && Cases == coronavirusDayOne.Cases;
+        ApiModel apiModel = (ApiModel) o;
+        return Objects.equals(Country, apiModel.Country) && Objects.equals(Province, apiModel.Province) && Objects.equals(CityCode, apiModel.CityCode) && Objects.equals(Status, apiModel.Status) && Objects.equals(Lat, apiModel.Lat) && Objects.equals(Lon, apiModel.Lon) && Objects.equals(CountryCode, apiModel.CountryCode) && Objects.equals(City, apiModel.City) && Objects.equals(Date, apiModel.Date) && Cases == apiModel.Cases;
     }
 
     @Override
@@ -200,8 +197,4 @@ public class CoronavirusDayOne {
             ", Cases='" + getCases() + "'" +
             "}";
     }
-   
-    
-
-    
 }

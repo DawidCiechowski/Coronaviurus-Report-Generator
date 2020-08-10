@@ -30,11 +30,15 @@ This is a Java application (in the early stages of working), which obtaines info
 
 * 09/08/2020
     * An initial commit, with basic DayOne structure.
+* 10/08/2020
+    * Restructured the project directory
+    * Added API call to obtain country's data from day one until current date.
+    * Created a reusable base class for API calls
 
 <a name="todo"></a>
 ## TODO
 
-- [ ] Enable user to enter the country, for which they'd like a report.
+- [X] Enable user to enter the country, for which they'd like a report.
 - [ ] Get and parse all the other information from Covid19API
 - [ ] Generate the report and save it to the currently working directory
 - [ ] Add other possible extensions to the application 
