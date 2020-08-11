@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.coronaviursapplication.model.API.CoronavirusCountryData;
 import com.coronaviursapplication.model.API.CoronavirusDayOne;
+import com.coronaviursapplication.model.API.CoronavirusTotalCountryData;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,7 +35,9 @@ public class App {
 
         CoronavirusCountryData[] coronavirusCountryData = getCountryData(country, dayOne);
 
-        printAllData(country, dayOne, coronavirusCountryData);
+        CoronavirusTotalCountryData[] totalData = getTotalData(country);
+
+        printAllData(country, dayOne, coronavirusCountryData, totalData);
         scanner.close();
     }
 
@@ -44,10 +47,28 @@ public class App {
      * @param dayOne - CoronavirusDayOne object holding the information regarding the data for day one of coronavirus in the country
      * @param data - CoronavirusCountryData object containing information about the country from day one until the current date
      */
-    private void printAllData(String country, CoronavirusDayOne dayOne, CoronavirusCountryData[] data) {
+    private void printAllData(String country, CoronavirusDayOne dayOne, CoronavirusCountryData[] data,
+    CoronavirusTotalCountryData[] totalData) {
         System.out.println("First recorded case of Covid19 in " + country.substring(0, 1).toUpperCase()
                 + country.substring(1).toLowerCase() + " was on " + dayOne.getDate());
+        System.out.println();
+
         System.out.println("Number of confirmed cases: " + data[data.length - 1].getCases());
+        System.out.println();
+
+        System.out.println("Current number of deaths in " + country + " from COVID-19: " + 
+        totalData[totalData.length-1].getDeaths());
+
+        System.out.println();
+        System.out.println("Current number of recovered cases in " + country + " from COVID-19: " + 
+        totalData[totalData.length-1].getRecovered());
+
+        System.out.println();
+        System.out.println("Current number of active cases in " + country + ": " + 
+        totalData[totalData.length-1].getActive());
+
+        System.out.println();
+
     }
 
     /**
@@ -87,6 +108,15 @@ public class App {
             country.toLowerCase() + 
             "/status/confirmed"), 
             CoronavirusDayOne[].class);
+    }
+    
+
+    private CoronavirusTotalCountryData[] getTotalData(String country) throws JsonParseException, JsonMappingException,
+            IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(
+            new URL("https://api.covid19api.com/total/country/" + country), 
+            CoronavirusTotalCountryData[].class);
     }
 
 

@@ -34,11 +34,13 @@ This is a Java application (in the early stages of working), which obtaines info
     * Restructured the project directory
     * Added API call to obtain country's data from day one until current date.
     * Created a reusable base class for API calls
+    * Call to API total information about the country to obtain deaths, active and recovered cases
 
 <a name="todo"></a>
 ## TODO
 
 - [X] Enable user to enter the country, for which they'd like a report.
+- [ ] Statistical information in regards to the country, e.g. average number of cases per day, peak number of cases, prediction for next day, etc.
 - [ ] Get and parse all the other information from Covid19API
 - [ ] Generate the report and save it to the currently working directory
 - [ ] Add other possible extensions to the application 
