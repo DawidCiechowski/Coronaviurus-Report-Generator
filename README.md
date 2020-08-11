@@ -41,6 +41,8 @@ This is a Java application (in the early stages of working), which obtaines info
 
 - [X] Enable user to enter the country, for which they'd like a report.
 - [ ] Statistical information in regards to the country, e.g. average number of cases per day, peak number of cases, prediction for next day, etc.
+- [ ] Generate different kind of reports, e.g. overall report, specific date-to-date report, multiple countries reports
+- [ ] Create report abstract factory and report class builder
 - [ ] Get and parse all the other information from Covid19API
 - [ ] Generate the report and save it to the currently working directory
 - [ ] Add other possible extensions to the application 
