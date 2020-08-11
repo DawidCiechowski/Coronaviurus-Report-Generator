@@ -11,7 +11,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-This is a Java application (in the early stages of working), which obtaines information about coronavirus statistics from an open API, analyses them and provides a generated PDF document that will converts all the available information, into one cohesive file.
+This is a Java application (in the early stages of working), which obtaines information about coronavirus statistics from an open API, analyses them and provides a generated PDF document that converts all the available information into one cohesive file.
 
 <a name="frameworks"></a>
 ## Frameworks 
