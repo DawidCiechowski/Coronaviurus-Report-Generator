@@ -46,3 +46,4 @@ This is a Java application (in the early stages of working), which obtaines info
 - [ ] Get and parse all the other information from Covid19API
 - [ ] Generate the report and save it to the currently working directory
 - [ ] Add other possible extensions to the application 
+- [ ] Fix 'Premature EOS error' on Unied States
