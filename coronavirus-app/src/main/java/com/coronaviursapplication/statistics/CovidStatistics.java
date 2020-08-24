@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -70,6 +71,14 @@ public class CovidStatistics {
 
     public int getCurrentRecoveredCases() {
         return this.totalData.get(this.totalData.size() - 1).getRecovered();
+    }
+
+    public int getPeakNumberOfCases() {
+        //Stream<CoronavirusTotalCountryData> stream = this.totalData.stream();
+        return this.totalData
+                        .stream()
+                        .mapToInt(day -> day.getActive())
+                        .max().orElseThrow(NoSuchElementException::new);
     }
 
     

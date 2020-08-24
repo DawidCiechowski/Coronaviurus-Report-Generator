@@ -47,16 +47,19 @@ public class App {
         System.out.println("Number of confirmed cases: " + statistics.getConfirmedCases());
         System.out.println();
 
+        System.out.println("Current number of active cases in " + country + ": " + 
+        statistics.getCurrentActiveCases());
+        System.out.println();
+
+        System.out.println("Peak number of active cases in " + country + ": " + statistics.getPeakNumberOfCases());
+        System.out.println();
+
         System.out.println("Current number of deaths in " + country + " from COVID-19: " + 
         statistics.getCurrentDeaths());
 
         System.out.println();
         System.out.println("Current number of recovered cases in " + country + " from COVID-19: " + 
         statistics.getCurrentRecoveredCases());
-
-        System.out.println();
-        System.out.println("Current number of active cases in " + country + ": " + 
-        statistics.getCurrentActiveCases());
 
         System.out.println();
         System.out.println("Average daily growth since the first case: " + statistics.getAverageDailyGrowth());

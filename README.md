@@ -35,6 +35,12 @@ This is a Java application (in the early stages of working), which obtaines info
     * Added API call to obtain country's data from day one until current date.
     * Created a reusable base class for API calls
     * Call to API total information about the country to obtain deaths, active and recovered cases
+* 24/08/2020
+    * Refactored App.java 
+    * Added statistics module to the application
+    * Refactored API and arraylist handling. 
+    * Removed unnecessary API calls
+    * Added statistics, such as peak number of active cases and averages
 
 <a name="todo"></a>
 ## TODO
