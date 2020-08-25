@@ -19,6 +19,8 @@ This is a Java application (in the early stages of working), which obtaines info
 - Maven 3.1
 - Covid19API 1.0 
 - Jackson 2.11.2
+- iTextPdf 5.5.10
+- bcprov-jdk15on 1.56
 
 <a name="works"></a>
 ## How it works
@@ -31,25 +33,30 @@ This is a Java application (in the early stages of working), which obtaines info
 * 09/08/2020
     * An initial commit, with basic DayOne structure.
 * 10/08/2020
-    * Restructured the project directory
+    * Restructured the project directory.
     * Added API call to obtain country's data from day one until current date.
-    * Created a reusable base class for API calls
-    * Call to API total information about the country to obtain deaths, active and recovered cases
+    * Created a reusable base class for API calls.
+    * Call to API total information about the country to obtain deaths, active and recovered cases.
 * 24/08/2020
-    * Refactored App.java 
-    * Added statistics module to the application
+    * Refactored App.java .
+    * Added statistics module to the application.
     * Refactored API and arraylist handling. 
-    * Removed unnecessary API calls
-    * Added statistics, such as peak number of active cases and averages
+    * Removed unnecessary API calls.
+    * Added statistics, such as peak number of active cases and averages.
+* 25/08/2020
+    * Removed printing statistical information to console, replaced with basic report generation.
+    * Added PDF Report Generation classes.
+    * Implemented first version of PDF report interface (Will be improved).
 
 <a name="todo"></a>
 ## TODO
 
 - [X] Enable user to enter the country, for which they'd like a report.
-- [ ] Statistical information in regards to the country, e.g. average number of cases per day, peak number of cases, prediction for next day, etc.
+- [X] Statistical information in regards to the country, e.g. average number of cases per day, peak number of cases, prediction for next day, etc.
 - [ ] Generate different kind of reports, e.g. overall report, specific date-to-date report, multiple countries reports
 - [ ] Create report abstract factory and report class builder
-- [ ] Get and parse all the other information from Covid19API
-- [ ] Generate the report and save it to the currently working directory
+- [X] Get and parse all the other information from Covid19API
+- [X] Generate the report and save it to the currently working directory
 - [ ] Add other possible extensions to the application 
 - [ ] Fix 'Premature EOS error' on United States
+- [ ] Add hashing capability to the software
